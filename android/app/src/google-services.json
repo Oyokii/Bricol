@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "565101432040",
+    "project_id": "bricol-cf642",
+    "storage_bucket": "bricol-cf642.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565101432040:android:3c4bd67e9f3410a4868d5d",
+        "android_client_info": {
+          "package_name": "com.example.bricol"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClHqJgWzKCa9fGWPBvz6bLHl-iMOrU-M8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
