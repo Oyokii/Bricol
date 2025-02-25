@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                   physics: const ScrollPhysics(),
                   child: Column(
                     children: [
-                      Container(height: 563, decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/bg_nvl_clt.jpg'))),
+                      Container(height: 612, width: MediaQuery.of(context).size.width ,decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/bg_nvl_clt.jpg'))),
                         child: const Column(
                           children: [
                             Padding(
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                                 leading: Icon(CupertinoIcons.search, color: Colors.black, size: 20,),
                               ),
                             ),
-                            SizedBox(height: 287),
+                            SizedBox(height: 317),
                             Padding(
                               padding: EdgeInsets.only(right: 50.0),
                               child: Text("NOUVELLE", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 35),),

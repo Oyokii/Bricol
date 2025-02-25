@@ -23,7 +23,7 @@ class DetailPage extends StatelessWidget {
 
     //print("J'ai réussi à prendre les valeurs de listImages ${listImages?.length}");
     return Container(
-      decoration: const BoxDecoration(color: Color(0xFFD2D2D2)),
+      decoration: const BoxDecoration(color: Color(0xFFeaeaea)),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Builder(builder: (context) {
           return Container(
@@ -37,176 +37,107 @@ class DetailPage extends StatelessWidget {
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Positioned(
-                      top: 20,
-                      child: IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: const Icon(Icons.keyboard_return)),),
-                    Container(
-                      width: screenWidth*0.6,
-                      height: 40,
-                      decoration: const BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.only(
-                              bottomRight: Radius.circular(20),
-                              topRight: Radius.circular(20))),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 5),
-                        child: Text(
-                          libelle,
-                          style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black),
-                          textAlign: TextAlign.center,
+                    Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: 40),
+                          width: screenWidth*0.55,
+                          height: 40,
+                          decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                  bottomRight: Radius.circular(20),
+                                  topRight: Radius.circular(20))),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 5),
+                            child: Text(
+                              libelle,
+                              style: const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
                         ),
-                      ),
+                        Container(
+                          margin: EdgeInsets.only(top: 40, left: 150),
+                          child: IconButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              icon: const Icon(Icons.keyboard_return)),
+                        ),
+                      ],
                     ),
-                    // Container(
-                    //   width: 200,
-                    //   height: 400,
-                    //   child: listImages != null ?
-                    //       Container(
-                    //         child: GridView.builder(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3), itemCount: listImages?.length, physics: NeverScrollableScrollPhysics(), scrollDirection: Axis.vertical, itemBuilder: (context, index) {
-                    //           Padding(
-                    //             padding: const EdgeInsets.only(
-                    //                 bottom: 5.0, left: 10),
-                    //             child: Container(
-                    //               foregroundDecoration: BoxDecoration(
-                    //                 color: Colors.red,
-                    //                   image: DecorationImage(
-                    //                       image:
-                    //                       AssetImage("assets/chaiseDetail2.png")
-                    //                       //NetworkImage(listImages?[index])
-                    //                   ),
-                    //                   border: Border.all(
-                    //                       color: Colors.white, width: 3)),
-                    //               height: 100,
-                    //               width: 100,
-                    //               color: Colors.red,
-                    //             ),
-                    //           );
-                    //         },),
-                    //       ): null,
-                    // ),
 
-                    // Container(
-                    //   child: (listImages != null) ? Column(
-                    //     children: [
-                    //       Padding(
-                    //         padding: const EdgeInsets.only(
-                    //             top: 20.0, left: 10),
-                    //         child: Container(
-                    //           height: 80,
-                    //           width: 80,
-                    //           decoration: BoxDecoration(
-                    //               image: DecorationImage(
-                    //                   image: listImages?[0]!.isNotEmpty ?
-                    //                   NetworkImage(
-                    //                       listImages?[0]): const AssetImage("")),
-                    //               border: Border.all(
-                    //                   color: Colors.white, width: 3)),
-                    //         ),
-                    //       ),
-                    //       Padding(
-                    //         padding: const EdgeInsets.only(
-                    //             top: 20.0, left: 10),
-                    //         child: Container(
-                    //           height: 80,
-                    //           width: 80,
-                    //           decoration: BoxDecoration(
-                    //               image: DecorationImage(
-                    //                   image: listImages?[1]!.isNotEmpty ?
-                    //                   NetworkImage(
-                    //                       listImages?[1]): const AssetImage("")),
-                    //               border: Border.all(
-                    //                   color: Colors.white, width: 3)),
-                    //         ),
-                    //       ),
-                    //       Padding(
-                    //         padding: const EdgeInsets.only(
-                    //             top: 20.0, left: 10),
-                    //         child: Container(
-                    //           height: 80,
-                    //           width: 80,
-                    //           decoration: BoxDecoration(
-                    //               image: DecorationImage(
-                    //                   image: listImages?[2]!.isNotEmpty ?
-                    //                   NetworkImage(
-                    //                       listImages?[2]): const AssetImage("")),
-                    //               border: Border.all(
-                    //                   color: Colors.white, width: 3)),
-                    //         ),
-                    //       ),
-                    //     ],
-                    //   ) : const Text("")
-                    // ),
 
                     Container(
                         child: (listImages != null)
-                            ? Column(
-                                children: [
-                                  listImages?[0]!.isNotEmpty
-                                      ? Padding(
-                                          padding: const EdgeInsets.only(
-                                              top: 20.0, left: 10),
-                                          child: Container(
-                                            height: 80,
-                                            width: 80,
-                                            decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                    image: NetworkImage(
-                                                        listImages?[0])),
-                                                border: Border.all(
-                                                    color: Colors.white,
-                                                    width: 3)),
-                                          ),
-                                        )
-                                      : Text(""),
-                                  listImages?[1]!.isNotEmpty
-                                      ? Padding(
-                                          padding: const EdgeInsets.only(
-                                              top: 20.0, left: 10),
-                                          child: Container(
-                                            height: 80,
-                                            width: 80,
-                                            decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                    image: NetworkImage(
-                                                        listImages?[1])),
-                                                border: Border.all(
-                                                    color: Colors.white,
-                                                    width: 3)),
-                                          ),
-                                        )
-                                      : Text(""),
-                                  listImages?[2]!.isNotEmpty
-                                      ? Padding(
-                                          padding: const EdgeInsets.only(
-                                              top: 20.0, left: 10),
-                                          child: Container(
-                                            height: 80,
-                                            width: 80,
-                                            decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                    image: NetworkImage(
-                                                        listImages?[2])),
-                                                border: Border.all(
-                                                    color: Colors.white,
-                                                    width: 3)),
-                                          ),
-                                        )
-                                      : Text(""),
-                                ],
-                              )
+                            ? Container(
+                          margin: EdgeInsets.only(left: 0),
+                              child: Column(
+                                  children: [
+                                    listImages?[0]!.isNotEmpty
+                                        ? Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 20.0, left: 10),
+                                            child: Container(
+                                              height: 80,
+                                              width: 80,
+                                              decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: NetworkImage(
+                                                          listImages?[0])),
+                                                  border: Border.all(
+                                                      color: Colors.white,
+                                                      width: 3)),
+                                            ),
+                                          )
+                                        : Text(""),
+                                    listImages?[1]!.isNotEmpty
+                                        ? Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 20.0, left: 10),
+                                            child: Container(
+                                              height: 80,
+                                              width: 80,
+                                              decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: NetworkImage(
+                                                          listImages?[1])),
+                                                  border: Border.all(
+                                                      color: Colors.white,
+                                                      width: 3)),
+                                            ),
+                                          )
+                                        : Text(""),
+                                    listImages?[2]!.isNotEmpty
+                                        ? Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 20.0, left: 10),
+                                            child: Container(
+                                              height: 80,
+                                              width: 80,
+                                              decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: NetworkImage(
+                                                          listImages?[2])),
+                                                  border: Border.all(
+                                                      color: Colors.white,
+                                                      width: 3)),
+                                            ),
+                                          )
+                                        : Text(""),
+                                  ],
+                                ),
+                            )
                             : const Text("")),
                   ]));
         }),
         Column(children: [
           Container(
-            height: screenHeight - 500,
+            height: screenHeight - 523,
             width: MediaQuery.of(context).size.width,
             child: Stack(children: [
               Positioned(
@@ -340,31 +271,31 @@ class DetailPage extends StatelessWidget {
 
               //QUANTITE ET PRIX
               Positioned(
-                top: 150,
-                right: 0,
+                top: 140,
+                left: 0,
                 child: Column(
                   children: [
                     Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(bottom: 13.0),
+                          padding: const EdgeInsets.only(bottom: 22.0, left: 0),
                           child: Container(
-                            height: screenHeight*0.07,
-                            width: screenHeight*0.5,
+                            height: screenHeight*0.06,
+                            width: screenHeight*0.24,
                             decoration: const BoxDecoration(
                                 color: Color(0xFF335D48),
                                 borderRadius: BorderRadius.only(
                                     topRight: Radius.circular(20),
                                     bottomRight: Radius.circular(20))),
                             child: const Padding(
-                              padding: EdgeInsets.only(left: 5, bottom: 50),
+                              padding: EdgeInsets.only(left: 0, top: 18),
                               child: Text(
                                 "Quantité : 3",
                                 textWidthBasis: TextWidthBasis.longestLine,
-                                textAlign: TextAlign.left,
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 20,
+                                  fontSize: 15,
                                 ),
                               ),
                             ),
@@ -373,7 +304,9 @@ class DetailPage extends StatelessWidget {
                         SizedBox(
                           width:screenWidth*0.1,
                         ),
-                        Container(
+                        Positioned(
+                          right: 0,
+                          child: Container(
                           height: screenHeight*0.15,
                           width: screenWidth*0.4,
                           decoration: const BoxDecoration(
@@ -412,7 +345,7 @@ class DetailPage extends StatelessWidget {
                               ),
                             ),
                           ),
-                        ),
+                        ),)
                       ],
                     )
                   ],
@@ -421,15 +354,15 @@ class DetailPage extends StatelessWidget {
 
               //CART
               Positioned(
-                  bottom: 22,
-                  left: 190,
+                  bottom: -10,
+                  left: 200,
                   // top: 218,
                   child: TextButton(
                     onPressed: () => StripeService.instance.makePayment(prix),
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 0),
                       child: Container(
-                        height: screenHeight *0.17,
+                        height: screenHeight *0.19,
                         width: screenWidth*0.18,
                         decoration: const BoxDecoration(
                           color: Colors.black,
@@ -437,48 +370,14 @@ class DetailPage extends StatelessWidget {
                               topRight: Radius.circular(25),
                               topLeft: Radius.circular(25)),
                         ),
-                        padding: const EdgeInsets.symmetric(horizontal: 30),
-                        child: const Text("PAYER",
-                            style: TextStyle(color: Colors.white, fontSize: 18),
+                        padding: const EdgeInsets.symmetric(horizontal: 37),
+                        child: const Text("ACHETER",
+                            style: TextStyle(color: Colors.white, fontSize: 16),
                             textAlign: TextAlign.center,
                             softWrap: true),
                       ),
                     ),
                   ))
-
-              // Positioned(
-              //     top: 220,
-              //     left: 200,
-              //     child: ElevatedButton(
-              //       style: ButtonStyle(
-              //         shape: WidgetStatePropertyAll(
-              //
-              //         )
-              //       ),
-              //       onPressed: (){
-              //         print("Ajouté au panier");
-              //       }, child: Padding(
-              //       padding: const EdgeInsets.only(bottom: 0),
-              //       child: Container(
-              //         height: 150,
-              //         width: 60,
-              //         decoration: const BoxDecoration(
-              //           color: Colors.black,
-              //           borderRadius: BorderRadius.only(
-              //               topRight: Radius.circular(15),
-              //               topLeft: Radius.circular(15)),
-              //         ),
-              //         padding: const EdgeInsets.symmetric(
-              //             horizontal: 19),
-              //         child:  Text("PANIER",
-              //             style: TextStyle(
-              //                 color: Colors.white,
-              //                 fontSize: 20),
-              //             textAlign: TextAlign.center,
-              //             softWrap: true),
-              //       ),
-              //     ),)
-              // ),
             ]),
           )
         ]),
