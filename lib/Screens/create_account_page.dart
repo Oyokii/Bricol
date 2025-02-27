@@ -32,13 +32,13 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               body: Container(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
-                decoration: const BoxDecoration(color: Color(0xFFFFC772), image: DecorationImage(image: AssetImage('assets/bg.jpg'), opacity: 0.3)),
+                decoration: const BoxDecoration(color: Color(0xFF46884f), image: DecorationImage(image: AssetImage('assets/mur_plante.png'), opacity: 0.9)),
                 child: Column(
                   children: [
                     const SizedBox(
                       height: 50,
                     ),
-                    //const Image(image: AssetImage("assets/logo.png"), width: 200,),
+                    const Image(image: AssetImage("assets/Logo.png"), width: 200,),
                     const SizedBox(
                       height: 50,
                     ),

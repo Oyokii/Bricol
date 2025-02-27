@@ -37,7 +37,7 @@ AuthenticationService _auth = AuthenticationService();
                     const SizedBox(
                       height: 50,
                     ),
-                    //const Image(image: AssetImage("assets/logo.png"), width: 200,),
+                    const Image(image: AssetImage("assets/Logo.png"), width: 200,),
                     const SizedBox(
                       height: 50,
                     ),

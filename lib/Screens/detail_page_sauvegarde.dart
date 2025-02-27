@@ -76,62 +76,62 @@ class DetailPage extends StatelessWidget {
                         child: (listImages != null)
                             ? Container(
                           margin: EdgeInsets.only(left: 0),
-                              child: Column(
-                                  children: [
-                                    listImages?[0]!.isNotEmpty
-                                        ? Padding(
-                                            padding: const EdgeInsets.only(
-                                                top: 20.0, left: 10),
-                                            child: Container(
-                                              height: 80,
-                                              width: 80,
-                                              decoration: BoxDecoration(
-                                                  image: DecorationImage(
-                                                      image: NetworkImage(
-                                                          listImages?[0])),
-                                                  border: Border.all(
-                                                      color: Colors.white,
-                                                      width: 3)),
-                                            ),
-                                          )
-                                        : Text(""),
-                                    listImages?[1]!.isNotEmpty
-                                        ? Padding(
-                                            padding: const EdgeInsets.only(
-                                                top: 20.0, left: 10),
-                                            child: Container(
-                                              height: 80,
-                                              width: 80,
-                                              decoration: BoxDecoration(
-                                                  image: DecorationImage(
-                                                      image: NetworkImage(
-                                                          listImages?[1])),
-                                                  border: Border.all(
-                                                      color: Colors.white,
-                                                      width: 3)),
-                                            ),
-                                          )
-                                        : Text(""),
-                                    listImages?[2]!.isNotEmpty
-                                        ? Padding(
-                                            padding: const EdgeInsets.only(
-                                                top: 20.0, left: 10),
-                                            child: Container(
-                                              height: 80,
-                                              width: 80,
-                                              decoration: BoxDecoration(
-                                                  image: DecorationImage(
-                                                      image: NetworkImage(
-                                                          listImages?[2])),
-                                                  border: Border.all(
-                                                      color: Colors.white,
-                                                      width: 3)),
-                                            ),
-                                          )
-                                        : Text(""),
-                                  ],
+                          child: Column(
+                            children: [
+                              listImages?[0]!.isNotEmpty
+                                  ? Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 20.0, left: 10),
+                                child: Container(
+                                  height: 80,
+                                  width: 80,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: NetworkImage(
+                                              listImages?[0])),
+                                      border: Border.all(
+                                          color: Colors.white,
+                                          width: 3)),
                                 ),
-                            )
+                              )
+                                  : Text(""),
+                              listImages?[1]!.isNotEmpty
+                                  ? Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 20.0, left: 10),
+                                child: Container(
+                                  height: 80,
+                                  width: 80,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: NetworkImage(
+                                              listImages?[1])),
+                                      border: Border.all(
+                                          color: Colors.white,
+                                          width: 3)),
+                                ),
+                              )
+                                  : Text(""),
+                              listImages?[2]!.isNotEmpty
+                                  ? Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 20.0, left: 10),
+                                child: Container(
+                                  height: 80,
+                                  width: 80,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: NetworkImage(
+                                              listImages?[2])),
+                                      border: Border.all(
+                                          color: Colors.white,
+                                          width: 3)),
+                                ),
+                              )
+                                  : Text(""),
+                            ],
+                          ),
+                        )
                             : const Text("")),
                   ]));
         }),
@@ -157,7 +157,7 @@ class DetailPage extends StatelessWidget {
                           children: [
                             Padding(
                               padding:
-                                  const EdgeInsets.only(right: 7.0, top: 20),
+                              const EdgeInsets.only(right: 7.0, top: 20),
                               child: Text(
                                 description,
                                 softWrap: true,
@@ -195,7 +195,7 @@ class DetailPage extends StatelessWidget {
                                       color: Colors.black,
                                       fontSize: 15,
                                       decorationStyle:
-                                          TextDecorationStyle.double),
+                                      TextDecorationStyle.double),
                                 )
                               ],
                             ),
@@ -233,38 +233,38 @@ class DetailPage extends StatelessWidget {
                     Positioned(
                       right: 0,
                       child: Padding(
-                      padding: const EdgeInsets.only(bottom: 30.0),
-                      child: Container(
-                        height: screenHeight*0.1,
-                        width: screenWidth*0.26,
-                        decoration: const BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                bottomLeft: Radius.circular(20))),
-                        child: const Padding(
-                          padding:
-                              EdgeInsets.symmetric(vertical: 6, horizontal: 6),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.star_half_outlined,
-                                color: Colors.yellowAccent,
-                                size: 30,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                "4.3/5",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 18),
-                              ),
-                            ],
+                        padding: const EdgeInsets.only(bottom: 30.0),
+                        child: Container(
+                          height: screenHeight*0.1,
+                          width: screenWidth*0.26,
+                          decoration: const BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(20),
+                                  bottomLeft: Radius.circular(20))),
+                          child: const Padding(
+                            padding:
+                            EdgeInsets.symmetric(vertical: 6, horizontal: 6),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.star_half_outlined,
+                                  color: Colors.yellowAccent,
+                                  size: 30,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  "4.3/5",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 18),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ),)
+                      ),)
                   ],
                 ),
               ),
@@ -307,45 +307,45 @@ class DetailPage extends StatelessWidget {
                         Positioned(
                           right: 0,
                           child: Container(
-                          height: screenHeight*0.15,
-                          width: screenWidth*0.4,
-                          decoration: const BoxDecoration(
-                              color: Color(0xFFC0A25A),
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                  bottomLeft: Radius.circular(20))),
-                          child: Container(
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 18, horizontal: 20),
-                              child: Column(
-                                children: [
-                                  Text(
-                                    '$prix €',
-                                    style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Row(
-                                    children: [
-                                      const SizedBox(
-                                        width: 66,
-                                      ),
-                                      Text(
-                                        "$prix€",
-                                        style: TextStyle(
-                                            color: Colors.red.withOpacity(0.7),
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 18),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                            height: screenHeight*0.15,
+                            width: screenWidth*0.4,
+                            decoration: const BoxDecoration(
+                                color: Color(0xFFC0A25A),
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    bottomLeft: Radius.circular(20))),
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 18, horizontal: 20),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      '$prix €',
+                                      style: const TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Row(
+                                      children: [
+                                        const SizedBox(
+                                          width: 66,
+                                        ),
+                                        Text(
+                                          "$prix€",
+                                          style: TextStyle(
+                                              color: Colors.red.withOpacity(0.7),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        ),)
+                          ),)
                       ],
                     )
                   ],
