@@ -32,7 +32,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               body: Container(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
-                decoration: const BoxDecoration(color: Color(0xFF46884f), image: DecorationImage(image: AssetImage('assets/mur_plante.png'), opacity: 0.9)),
+                decoration: const BoxDecoration(color: Color(0xFFFFFFF), image: DecorationImage(image: AssetImage('assets/bg2.png'), opacity: 0.9)),
                 child: Column(
                   children: [
                     const SizedBox(
