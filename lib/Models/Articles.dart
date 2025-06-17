@@ -12,8 +12,8 @@ class Articles{
   
   // Déclaraction et Initialisation
   final db = FirebaseFirestore.instance;
-  CollectionReference _articles = FirebaseFirestore.instance.collection('articles');
-  FirebaseStorage _storage = FirebaseStorage.instance;
+  final CollectionReference _articles = FirebaseFirestore.instance.collection('articles');
+  final FirebaseStorage _storage = FirebaseStorage.instance;
 
   Articles(      
       {this.articleId,

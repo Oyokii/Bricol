@@ -22,7 +22,7 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
           size: MediaQuery.of(context).size
         ),
         child: SingleChildScrollView(
-          physics: ScrollPhysics(),
+          physics: const ScrollPhysics(),
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
@@ -31,19 +31,19 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
               StreamBuilder(
                 stream: db.collection("newCollectionRepresentationImages").snapshots(),
                 builder: (context, snapshot) {
-                  if (!snapshot.hasData!) {
-                    return Text("Aucune image de représentation trouvée");
+                  if (!snapshot.hasData) {
+                    return const Text("Aucune image de représentation trouvée");
                   } else {
                     List<dynamic> imageRepresentation = [];
-                    snapshot.data!.docs.forEach((element) {
+                    for (var element in snapshot.data!.docs) {
                       imageRepresentation.add(element);
-                    });
+                    }
 
                     return Container(
                       child: SizedBox(
                         child: Row(
                           children: [
-                            Container(
+                            SizedBox(
                               height: 450,
                               width: MediaQuery
                                   .of(context)
@@ -54,8 +54,8 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
                                   shrinkWrap: true,
                                   itemCount: 2,
                                   scrollDirection: Axis.horizontal,
-                                  physics: ScrollPhysics(),
-                                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                  physics: const ScrollPhysics(),
+                                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                       crossAxisCount: 1,
                                       crossAxisSpacing: 1,
                                       childAspectRatio: 1.40 / 1),
@@ -96,15 +96,15 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
               StreamBuilder(
                 stream: db.collection("newCollectionKeywords").snapshots(),
                 builder: (context, snapshot) {
-                  if (!snapshot.hasData!) {
-                    return Text("Aucune image de représentation trouvée");
+                  if (!snapshot.hasData) {
+                    return const Text("Aucune image de représentation trouvée");
                   } else {
                     List<dynamic> motCle = [];
-                    snapshot.data!.docs.forEach((element) {
+                    for (var element in snapshot.data!.docs) {
                       motCle.add(element);
-                    });
+                    }
 
-                    return Container(
+                    return SizedBox(
                       height: 60,
                       width: MediaQuery
                           .of(context)
@@ -122,9 +122,9 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
                                 child: GridView.builder(
                                   itemCount: 6,
                                   shrinkWrap: false,
-                                  physics: ScrollPhysics(),
+                                  physics: const ScrollPhysics(),
                                   scrollDirection: Axis.horizontal,
-                                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                       crossAxisCount: 1,
                                       childAspectRatio: 2 / 6,
                                       crossAxisSpacing: 1),
@@ -141,11 +141,11 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
                                           decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(
                                                 20),
-                                            color: Color(0xFF37271F),
+                                            color: const Color(0xFF37271F),
                                           ),
                                           child: Center(
                                             child: Text(
-                                              libelle, style: TextStyle(
+                                              libelle, style: const TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.bold
@@ -170,15 +170,15 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
               StreamBuilder(
                 stream: db.collection("newCollectionKeywords").snapshots(),
                 builder: (context, snapshot) {
-                  if (!snapshot.hasData!) {
-                    return Text("Aucun mot clé trouvé");
+                  if (!snapshot.hasData) {
+                    return const Text("Aucun mot clé trouvé");
                   } else {
                     final List<dynamic> motCle= [];
-                    snapshot.data!.docs.forEach((element) {
+                    for (var element in snapshot.data!.docs) {
                       motCle.add(element);
-                    });
+                    }
 
-                    return Container(
+                    return SizedBox(
                       height: 60,
                       width: MediaQuery
                           .of(context)
@@ -199,9 +199,9 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
                                 child: GridView.builder(
                                   itemCount: 6,
                                   shrinkWrap: false,
-                                  physics: ScrollPhysics(),
+                                  physics: const ScrollPhysics(),
                                   scrollDirection: Axis.horizontal,
-                                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                       crossAxisCount: 1,
                                       childAspectRatio: 2 / 6,
                                       crossAxisSpacing: 1),
@@ -219,11 +219,11 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
                                           decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(
                                                 20),
-                                            color: Color(0xFF37271F),
+                                            color: const Color(0xFF37271F),
                                           ),
                                           child: Center(
                                             child: Text(
-                                              libelle, style: TextStyle(
+                                              libelle, style: const TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.bold
@@ -248,16 +248,16 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
         stream: db.collection("newCollectionArticles").snapshots(),
         builder: (context, snapshot) {
           final List<dynamic> listeArticle = [];
-          if (!snapshot.hasData!) {
-            return Text('Aucun article trouvé');
+          if (!snapshot.hasData) {
+            return const Text('Aucun article trouvé');
           } else {
-            snapshot.data!.docs.forEach((element) {
+            for (var element in snapshot.data!.docs) {
               listeArticle.add(element);
-            });
+            }
 
             return Padding(
               padding: const EdgeInsets.only(top: 13.0),
-              child: Container(
+              child: SizedBox(
                 height: 310,
                 width: MediaQuery
                     .of(context)
@@ -275,10 +275,10 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
                           height: 310,
                           child: GridView.builder(
                             shrinkWrap: true,
-                            physics: ScrollPhysics(),
+                            physics: const ScrollPhysics(),
                             scrollDirection: Axis.vertical,
                             itemCount: 5,
-                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 1,
                                 childAspectRatio: 0.45 / 0.2,
                                 crossAxisSpacing: 1),
@@ -299,7 +299,7 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
                                         width: 140,
                                         height: 140,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
+                                          borderRadius: const BorderRadius.only(
                                               topLeft: Radius.circular(20),
                                               bottomLeft: Radius.circular(20)),
                                           image: DecorationImage(
@@ -310,7 +310,7 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
                                       Container(
                                         height: 140,
                                         width: 210,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           borderRadius: BorderRadius.only(
                                               topRight: Radius.circular(20),
                                               bottomRight: Radius.circular(20)),
@@ -319,9 +319,9 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
                                         child: Column(
                                           children: [
                                             Padding(
-                                              padding: EdgeInsets.only(top: 5),
+                                              padding: const EdgeInsets.only(top: 5),
                                               child: Text(libelle,
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     color: Colors.white,
                                                     fontSize: 15,
                                                     fontWeight: FontWeight
@@ -331,15 +331,15 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
                                                   .symmetric(horizontal: 8.0),
                                               child: Text(
                                                   description,
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                       color: Colors.white,
                                                       fontSize: 12)),
                                             ),
                                             Padding(
                                               padding: const EdgeInsets.only(
                                                   left: 120.0),
-                                              child: Text("${prix}€",
-                                                  style: TextStyle(
+                                              child: Text("$prix€",
+                                                  style: const TextStyle(
                                                       color: Colors.white,
                                                       fontSize: 22,
                                                       fontWeight: FontWeight
@@ -349,8 +349,8 @@ class _NewCollectionPageState extends State<NewCollectionPage> {
                                               padding: const EdgeInsets.only(
                                                   left: 130.0),
                                               child: Text(
-                                                "soit ${prix/nbArticleLot}€ par ${libelle}",
-                                                style: TextStyle(
+                                                "soit ${prix/nbArticleLot}€ par $libelle",
+                                                style: const TextStyle(
                                                     color: Colors.white,
                                                     fontSize: 11),
                                                 maxLines: 2,),

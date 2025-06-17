@@ -15,7 +15,7 @@ class _ConnexionPageState extends State<ConnexionPage> {
   TextEditingController password = TextEditingController();
   TextEditingController email = TextEditingController();
 
-AuthenticationService _auth = AuthenticationService();
+final AuthenticationService _auth = AuthenticationService();
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ AuthenticationService _auth = AuthenticationService();
       home: Builder(
           builder: (context) {
             return Scaffold(
-              body: Container(
+              body: SizedBox(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 //decoration: const BoxDecoration(color: Color(0xFFFFC772), image: DecorationImage(image: AssetImage('assets/bg.jpg'), opacity: 0.3)),
@@ -72,7 +72,7 @@ AuthenticationService _auth = AuthenticationService();
                             ),
                             TextButton(
                                 onPressed: () {
-                                  if( email != null && password != null){
+                                  if( password != null){
                                     _auth.signInWithEmailAndPassword(email.value.text, password.value.text).onError((error, stackTrace) => print("Une erreur a été rencontrée lors de l'authentification"),);
                                     
                                     Navigator.pushNamed(context, "/homePage");

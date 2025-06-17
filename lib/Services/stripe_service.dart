@@ -39,7 +39,7 @@ class StripeService {
       return null;
   }catch(e){
       print(e);
-    };
+    }
     return null;
   }
 

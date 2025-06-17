@@ -1,4 +1,5 @@
 import 'package:bricol/Models/Articles.dart';
+import 'package:bricol/Screens/cart_page.dart';
 import 'package:bricol/Screens/home_page.dart';
 import 'package:bricol/Screens/connexion_page.dart';
 import 'package:bricol/Screens/new_collection_page.dart';
@@ -12,13 +13,13 @@ import 'package:provider/provider.dart';
 
 void main() async{
 
-  Future<void>_setup() async{
+  Future<void>setup() async{
     WidgetsFlutterBinding.ensureInitialized();
     Stripe.publishableKey = stripePublishableKey;
 
   }
 
-  await _setup();
+  await setup();
 
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -28,13 +29,12 @@ void main() async{
     providers: [
       StreamProvider<List<Articles>>.value(
         value : Articles().article,
-        initialData : []
+        initialData : const []
       )
     ],
     child:
-      // Paymentpage()
-    ConnexionPage(),
-    // HomePage()
+    // ConnexionPage(),
+    const CartPage()
   ),
   );
 }

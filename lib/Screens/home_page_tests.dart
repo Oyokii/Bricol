@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     final  double width = MediaQuery.of(context).size.width;
     final  double height = MediaQuery.of(context).size.height;
 
-    late List<DocumentSnapshot> _docs;
+    late List<DocumentSnapshot> docs;
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -36,11 +36,11 @@ class _HomePageState extends State<HomePage> {
                 return const Text("chargement de la page");
               }
               List<dynamic> articlesFavoris = [];
-              snapshot.data!.docs.forEach((element) {
+              for (var element in snapshot.data!.docs) {
                 articlesFavoris.add(element);
-              });
+              }
 
-              _docs = snapshot.data!.docs;
+              docs = snapshot.data!.docs;
               return MediaQuery(
                 data: MediaQueryData(
                   size: MediaQuery.sizeOf(context),
@@ -135,10 +135,8 @@ class _HomePageState extends State<HomePage> {
                             final List<dynamic> materiaux = List<String>.from(articlefavori['materiaux'] as List);
                             final favori = articlefavori["articleFavori"];
                             List<dynamic> listImages = List<String>.from(articlefavori['listImages'] as List);
-                            if(listImages!=null){
-                              listImages = articlefavori["listImages"];
-                            }
-                            return SizedBox(
+                            listImages = articlefavori["listImages"];
+                                                      return SizedBox(
                               child: Column(
                                 children: [
                                   Container(
@@ -212,11 +210,11 @@ class _HomePageState extends State<HomePage> {
     return StreamBuilder(
         stream: db.collection("typesArticles").snapshots(),
         builder: (context, snapshot) {
-          if(!snapshot.hasData!){
+          if(!snapshot.hasData){
             return const Text("Attention aucune famille trouvée");
           }else{
             List<dynamic> familleArticle = [];
-            snapshot.data!.docs.forEach((element) {familleArticle.add(element);});
+            for (var element in snapshot.data!.docs) {familleArticle.add(element);}
             return Column(
               children: [
                 Container(
@@ -260,7 +258,7 @@ class _HomePageState extends State<HomePage> {
                                 Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 4.0),
                                   child: Text(
-                                    "${libelle}",
+                                    "$libelle",
                                     maxLines: 1,
                                     style:
                                     const TextStyle(fontSize: 16, color: Colors.white),

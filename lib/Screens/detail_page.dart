@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class DetailPage extends StatelessWidget {
-  final dynamic? libelle;
-  final dynamic? description;
-  final dynamic? urlImage;
+  final dynamic libelle;
+  final dynamic description;
+  final dynamic urlImage;
   final List<dynamic>? listImages;
-  final dynamic? famille;
-  final dynamic? prix;
+  final dynamic famille;
+  final dynamic prix;
   final List<dynamic>? materiaux;
-  final dynamic? favori;
+  final dynamic favori;
 
-  DetailPage(this.libelle, this.description, this.urlImage,this.famille, this.prix, this.favori, this.materiaux, {super.key, this.listImages});
+  const DetailPage(this.libelle, this.description, this.urlImage,this.famille, this.prix, this.favori, this.materiaux, {super.key, this.listImages});
 
   @override
   Widget build(BuildContext context) {
@@ -158,7 +158,7 @@ class DetailPage extends StatelessWidget {
                                       border: Border.all(
                                           color: Colors.white, width: 3)),
                                 ),
-                              ): Text(""),
+                              ): const Text(""),
                               listImages?[1]!.isNotEmpty ? Padding(
                                 padding: const EdgeInsets.only(
                                     top: 20.0, left: 10),
@@ -172,7 +172,7 @@ class DetailPage extends StatelessWidget {
                                       border: Border.all(
                                           color: Colors.white, width: 3)),
                                 ),
-                              ): Text(""),
+                              ): const Text(""),
                               listImages?[2]!.isNotEmpty ? Padding(
                                 padding: const EdgeInsets.only(
                                     top: 20.0, left: 10),
@@ -186,7 +186,7 @@ class DetailPage extends StatelessWidget {
                                       border: Border.all(
                                           color: Colors.white, width: 3)),
                                 ),
-                              ): Text(""),
+                              ): const Text(""),
                             ],
                           ) : const Text("")
                       ),

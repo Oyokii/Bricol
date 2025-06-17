@@ -25,7 +25,7 @@ class _PaymentpageState extends State<Paymentpage> {
                 StripeService.instance.makePayment(prix!);
               },
               color: Colors.green,
-              child: Text("Purchase"),
+              child: const Text("Purchase"),
             )
           ],
         ),

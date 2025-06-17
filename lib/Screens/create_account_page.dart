@@ -32,7 +32,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               body: Container(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
-                decoration: const BoxDecoration(color: Color(0xFFFFFFF), image: DecorationImage(image: AssetImage('assets/bg2.png'), opacity: 0.9)),
+                decoration: const BoxDecoration(color: Color(0x0fffffff), image: DecorationImage(image: AssetImage('assets/bg2.png'), opacity: 0.9)),
                 child: Column(
                   children: [
                     const SizedBox(
@@ -99,9 +99,9 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                             ),
                             TextButton(
                                 onPressed: () async {
-                                  var _email = email.value.text;
-                                  var _password = password.value.text;
-                                  return await _auth.RegisterWithEmailAndPassword(_email, _password);
+                                  var email = this.email.value.text;
+                                  var password = this.password.value.text;
+                                  return await _auth.RegisterWithEmailAndPassword(email, password);
                                 },
                                 style: const ButtonStyle(
                                   backgroundColor: WidgetStatePropertyAll(Colors.black),
@@ -117,11 +117,11 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text('Vous avez déja un compte ?'),
-                                SizedBox(width: 3,),
+                                const Text('Vous avez déja un compte ?'),
+                                const SizedBox(width: 3,),
                                 TextButton(onPressed: (){
                                   Navigator.pushNamed(context, "/connexionPage");
-                                }, child: Text('Connectez-vous', style: TextStyle(fontWeight: FontWeight.w800, color: Colors.black),)),
+                                }, child: const Text('Connectez-vous', style: TextStyle(fontWeight: FontWeight.w800, color: Colors.black),)),
                               ],
                             ),
                           ],

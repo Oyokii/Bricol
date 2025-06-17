@@ -29,9 +29,9 @@ class _HomePageState extends State<HomePage> {
                 return const Text("chargement de la page");
               }
               List<dynamic> articlesFavoris = [];
-              snapshot.data!.docs.forEach((element) {
+              for (var element in snapshot.data!.docs) {
                 articlesFavoris.add(element);
-              });
+              }
               return MediaQuery(
                 data: MediaQueryData(
                   size: MediaQuery.sizeOf(context),
@@ -196,7 +196,7 @@ class _HomePageState extends State<HomePage> {
         ),
         bottomNavigationBar: BottomNavigationBar(items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Tips'),
+          BottomNavigationBarItem(icon: Icon(Icons.add_shopping_cart), label: 'Cart'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profiler'),
         ],),
       ),
@@ -215,11 +215,11 @@ class _HomePageState extends State<HomePage> {
     return StreamBuilder(
         stream: db.collection("typesArticles").snapshots(),
         builder: (context, snapshot) {
-          if(!snapshot.hasData!){
+          if(!snapshot.hasData){
             return const Text("Attention aucune famille trouvée");
           }else{
             List<dynamic> familleArticle = [];
-            snapshot.data!.docs.forEach((element) {familleArticle.add(element);});
+            for (var element in snapshot.data!.docs) {familleArticle.add(element);}
             return Column(
               children: [
                 Container(
@@ -263,7 +263,7 @@ class _HomePageState extends State<HomePage> {
                                 Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 4.0),
                                   child: Text(
-                                    "${libelle}",
+                                    "$libelle",
                                     maxLines: 1,
                                     style:
                                     const TextStyle(fontSize: 16, color: Colors.white),

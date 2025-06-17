@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class DetailPage extends StatelessWidget {
-  final dynamic? libelle;
-  final dynamic? description;
-  final dynamic? urlImage;
+  final dynamic libelle;
+  final dynamic description;
+  final dynamic urlImage;
   final List<dynamic>? listImages;
-  final dynamic? famille;
-  final dynamic? prix;
+  final dynamic famille;
+  final dynamic prix;
   final List<dynamic>? materiaux;
-  final dynamic? favori;
+  final dynamic favori;
 
-  DetailPage(this.libelle, this.description, this.urlImage, this.famille,
+  const DetailPage(this.libelle, this.description, this.urlImage, this.famille,
       this.prix, this.favori, this.materiaux,
       {super.key, this.listImages});
 
@@ -40,7 +40,7 @@ class DetailPage extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          margin: EdgeInsets.only(top: 40),
+                          margin: const EdgeInsets.only(top: 40),
                           width: screenWidth*0.55,
                           height: 40,
                           decoration: const BoxDecoration(
@@ -61,7 +61,7 @@ class DetailPage extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 40, left: 150),
+                          margin: const EdgeInsets.only(top: 40, left: 150),
                           child: IconButton(
                               onPressed: () {
                                 Navigator.pop(context);
@@ -75,7 +75,7 @@ class DetailPage extends StatelessWidget {
                     Container(
                         child: (listImages != null)
                             ? Container(
-                          margin: EdgeInsets.only(left: 0),
+                          margin: const EdgeInsets.only(left: 0),
                           child: Column(
                             children: [
                               listImages?[0]!.isNotEmpty
@@ -94,7 +94,7 @@ class DetailPage extends StatelessWidget {
                                           width: 3)),
                                 ),
                               )
-                                  : Text(""),
+                                  : const Text(""),
                               listImages?[1]!.isNotEmpty
                                   ? Padding(
                                 padding: const EdgeInsets.only(
@@ -111,7 +111,7 @@ class DetailPage extends StatelessWidget {
                                           width: 3)),
                                 ),
                               )
-                                  : Text(""),
+                                  : const Text(""),
                               listImages?[2]!.isNotEmpty
                                   ? Padding(
                                 padding: const EdgeInsets.only(
@@ -128,7 +128,7 @@ class DetailPage extends StatelessWidget {
                                           width: 3)),
                                 ),
                               )
-                                  : Text(""),
+                                  : const Text(""),
                             ],
                           ),
                         )
@@ -136,7 +136,7 @@ class DetailPage extends StatelessWidget {
                   ]));
         }),
         Column(children: [
-          Container(
+          SizedBox(
             height: screenHeight - 523,
             width: MediaQuery.of(context).size.width,
             child: Stack(children: [
